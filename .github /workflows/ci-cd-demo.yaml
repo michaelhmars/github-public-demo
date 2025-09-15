@@ -1,0 +1,23 @@
+name: demo ci cd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: |
+          echo 'building'
+
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: publish
+        run: |
+          echo 'publishing'
