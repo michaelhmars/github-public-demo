@@ -27,7 +27,8 @@ jobs:
     steps:
       - name: 'Get variable from Development environment'
         run: |
-          echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
+          echo "hello from job-Development"
+          # echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
 
   job-Staging:
     environment: Staging
@@ -37,7 +38,8 @@ jobs:
     steps:
       - name: 'Get variable from Staging environment'
         run: |
-          echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
+          # echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
+          echo "hello from job-Staging"
 
 
 
