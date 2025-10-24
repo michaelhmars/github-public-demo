@@ -23,23 +23,24 @@ jobs:
     environment: Development
     needs: [job1]
     name: A job to test Development environment variables
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Get variable from Development environment'
         run: |
           echo "hello from job-Development"
-          # echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
+          echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
 
   job-Staging:
     environment: Staging
     needs: [job-Development]
     name: A job to test Staging environment variables
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Get variable from Staging environment'
         run: |
-          # echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
           echo "hello from job-Staging"
+          echo "DEFAULT_NODE_VERSION: ${{ vars.DEFAULT_NODE_VERSION }}"
+          
 
 
 
